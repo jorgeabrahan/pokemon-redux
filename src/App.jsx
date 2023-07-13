@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux'
-import './App.css'
 import { decrement, increment, incrementByAmount } from './store/slices/counter/'
 
 function App() {
