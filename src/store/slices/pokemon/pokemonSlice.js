@@ -10,12 +10,17 @@ export const pokemonSlice = createSlice({
   name: 'pokemon',
   initialState,
   reducers: {
-    increment: (state) => {
-      state.page += 1
+    loadPokemons: (state) => {
+      state.isLoading = true
+    },
+    setPokemons: (state, action) => {
+      state.isLoading = false
+      state.page = action.payload?.page
+      state.pokemons = action.payload?.pokemons
     }
   }
 })
 
-export const { increment } = pokemonSlice.actions
+export const { loadPokemons, setPokemons } = pokemonSlice.actions
 
 export default pokemonSlice.reducer
